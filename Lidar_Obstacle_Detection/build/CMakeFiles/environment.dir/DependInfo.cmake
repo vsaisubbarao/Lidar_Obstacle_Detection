@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/vssr/Documents/UdacitySensorFusion/SFND_Lidar_Obstacle_Detection/src/environment.cpp" "/home/vssr/Documents/UdacitySensorFusion/SFND_Lidar_Obstacle_Detection/build/CMakeFiles/environment.dir/src/environment.cpp.o"
-  "/home/vssr/Documents/UdacitySensorFusion/SFND_Lidar_Obstacle_Detection/src/processPointClouds.cpp" "/home/vssr/Documents/UdacitySensorFusion/SFND_Lidar_Obstacle_Detection/build/CMakeFiles/environment.dir/src/processPointClouds.cpp.o"
-  "/home/vssr/Documents/UdacitySensorFusion/SFND_Lidar_Obstacle_Detection/src/render/render.cpp" "/home/vssr/Documents/UdacitySensorFusion/SFND_Lidar_Obstacle_Detection/build/CMakeFiles/environment.dir/src/render/render.cpp.o"
+  "/home/vssr/Documents/UdacitySensorFusion/Lidar_Obstacle_Detection/src/environment.cpp" "/home/vssr/Documents/UdacitySensorFusion/Lidar_Obstacle_Detection/build/CMakeFiles/environment.dir/src/environment.cpp.o"
+  "/home/vssr/Documents/UdacitySensorFusion/Lidar_Obstacle_Detection/src/processPointClouds.cpp" "/home/vssr/Documents/UdacitySensorFusion/Lidar_Obstacle_Detection/build/CMakeFiles/environment.dir/src/processPointClouds.cpp.o"
+  "/home/vssr/Documents/UdacitySensorFusion/Lidar_Obstacle_Detection/src/render/render.cpp" "/home/vssr/Documents/UdacitySensorFusion/Lidar_Obstacle_Detection/build/CMakeFiles/environment.dir/src/render/render.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

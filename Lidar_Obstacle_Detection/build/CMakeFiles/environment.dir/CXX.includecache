@@ -6,21 +6,21 @@
 
 #IncludeRegexTransform: 
 
-/home/vssr/Documents/UdacitySensorFusion/SFND_Lidar_Obstacle_Detection/src/environment.cpp
+/home/vssr/Documents/UdacitySensorFusion/Lidar_Obstacle_Detection/src/environment.cpp
 sensors/lidar.h
-/home/vssr/Documents/UdacitySensorFusion/SFND_Lidar_Obstacle_Detection/src/sensors/lidar.h
+/home/vssr/Documents/UdacitySensorFusion/Lidar_Obstacle_Detection/src/sensors/lidar.h
 render/render.h
-/home/vssr/Documents/UdacitySensorFusion/SFND_Lidar_Obstacle_Detection/src/render/render.h
+/home/vssr/Documents/UdacitySensorFusion/Lidar_Obstacle_Detection/src/render/render.h
 processPointClouds.h
-/home/vssr/Documents/UdacitySensorFusion/SFND_Lidar_Obstacle_Detection/src/processPointClouds.h
+/home/vssr/Documents/UdacitySensorFusion/Lidar_Obstacle_Detection/src/processPointClouds.h
 processPointClouds.cpp
-/home/vssr/Documents/UdacitySensorFusion/SFND_Lidar_Obstacle_Detection/src/processPointClouds.cpp
+/home/vssr/Documents/UdacitySensorFusion/Lidar_Obstacle_Detection/src/processPointClouds.cpp
 
-/home/vssr/Documents/UdacitySensorFusion/SFND_Lidar_Obstacle_Detection/src/processPointClouds.cpp
+/home/vssr/Documents/UdacitySensorFusion/Lidar_Obstacle_Detection/src/processPointClouds.cpp
 processPointClouds.h
-/home/vssr/Documents/UdacitySensorFusion/SFND_Lidar_Obstacle_Detection/src/processPointClouds.h
+/home/vssr/Documents/UdacitySensorFusion/Lidar_Obstacle_Detection/src/processPointClouds.h
 
-/home/vssr/Documents/UdacitySensorFusion/SFND_Lidar_Obstacle_Detection/src/processPointClouds.h
+/home/vssr/Documents/UdacitySensorFusion/Lidar_Obstacle_Detection/src/processPointClouds.h
 pcl/io/pcd_io.h
 -
 pcl/common/common.h
@@ -50,21 +50,17 @@ ctime
 chrono
 -
 render/box.h
-/home/vssr/Documents/UdacitySensorFusion/SFND_Lidar_Obstacle_Detection/src/render/box.h
+/home/vssr/Documents/UdacitySensorFusion/Lidar_Obstacle_Detection/src/render/box.h
 
-/home/vssr/Documents/UdacitySensorFusion/SFND_Lidar_Obstacle_Detection/src/render/box.h
+/home/vssr/Documents/UdacitySensorFusion/Lidar_Obstacle_Detection/src/render/box.h
 Eigen/Geometry
 -
 
-/home/vssr/Documents/UdacitySensorFusion/SFND_Lidar_Obstacle_Detection/src/render/render.cpp
-render.h
-/home/vssr/Documents/UdacitySensorFusion/SFND_Lidar_Obstacle_Detection/src/render/render.h
-
-/home/vssr/Documents/UdacitySensorFusion/SFND_Lidar_Obstacle_Detection/src/render/render.h
+/home/vssr/Documents/UdacitySensorFusion/Lidar_Obstacle_Detection/src/render/render.h
 pcl/visualization/pcl_visualizer.h
 -
 box.h
-/home/vssr/Documents/UdacitySensorFusion/SFND_Lidar_Obstacle_Detection/src/render/box.h
+/home/vssr/Documents/UdacitySensorFusion/Lidar_Obstacle_Detection/src/render/box.h
 iostream
 -
 vector
@@ -72,9 +68,9 @@ vector
 string
 -
 
-/home/vssr/Documents/UdacitySensorFusion/SFND_Lidar_Obstacle_Detection/src/sensors/lidar.h
+/home/vssr/Documents/UdacitySensorFusion/Lidar_Obstacle_Detection/src/sensors/lidar.h
 ../render/render.h
-/home/vssr/Documents/UdacitySensorFusion/SFND_Lidar_Obstacle_Detection/src/render/render.h
+/home/vssr/Documents/UdacitySensorFusion/Lidar_Obstacle_Detection/src/render/render.h
 ctime
 -
 chrono
