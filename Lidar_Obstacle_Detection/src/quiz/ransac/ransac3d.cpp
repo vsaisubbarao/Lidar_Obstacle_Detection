@@ -24,8 +24,11 @@ pcl::visualization::PCLVisualizer::Ptr initScene()
   	return viewer;
 }
 
+
 std::unordered_set<int> Ransac3D(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, int maxIterations, float distanceTol)
 {
+    auto startTime = std::chrono::steady_clock::now();
+
 	std::unordered_set<int> inliersResult;
 	srand(time(NULL));
 	
@@ -48,8 +51,8 @@ std::unordered_set<int> Ransac3D(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, int 
         // Plane: ax + by + cz + d = 0
         Eigen::Vector3f v1, v2, v_normal;
 
-        v1 << point1.x - point2.x, point1.y - point2.y, point1.z - point2.z; 
-        v2 << point1.x - point3.x, point1.y - point3.y, point1.z - point3.z; 
+        v1 << point2.x - point1.x, point2.y - point1.y, point2.z - point1.z; 
+        v2 << point3.x - point1.x, point3.y - point1.y, point3.z - point1.z; 
         
         v_normal = v1.cross(v2); 
 
@@ -65,7 +68,7 @@ std::unordered_set<int> Ransac3D(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, int 
         for(int index=0 ; index < cloud->points.size() ; index++)
         {
             auto point = cloud->points[index];
-            float dist = fabs(a * point.x + b * point.y + c + d) / denom ;
+            float dist = fabs(a * point.x + b * point.y + c*point.z + d) / denom ;
 
             // If distance is smaller than threshold count it as inlier
             if(dist < distanceTol)
@@ -78,9 +81,15 @@ std::unordered_set<int> Ransac3D(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, int 
 	}
 
 	// Return indicies of inliers from fitted line with most inliers	
+
 	std::cout<<"Number of inliers is "<<inliersResult.size()<<std::endl;
+    auto endTime = std::chrono::steady_clock::now();
+    auto elapsedTime = std::chrono::duration_cast<std::chrono::milliseconds>(endTime - startTime);
+    std::cout << "Ransac3D took " << elapsedTime.count() << " milliseconds" << std::endl;
+
 	return inliersResult;
 }
+
 
 int main ()
 {
@@ -91,9 +100,8 @@ int main ()
 	// Create data
 	pcl::PointCloud<pcl::PointXYZ>::Ptr cloud = CreateData3D();
 	
-
 	// Max iteration and distance tolerance arguments for Ransac function
-	std::unordered_set<int> inliers = Ransac3D(cloud, 10000, 0.1);
+	std::unordered_set<int> inliers = Ransac3D(cloud, 20, 0.25);
 
 	pcl::PointCloud<pcl::PointXYZ>::Ptr  cloudInliers(new pcl::PointCloud<pcl::PointXYZ>());
 	pcl::PointCloud<pcl::PointXYZ>::Ptr cloudOutliers(new pcl::PointCloud<pcl::PointXYZ>());
