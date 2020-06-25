@@ -89,7 +89,25 @@ void cityBlock(pcl::visualization::PCLVisualizer::Ptr& viewer)
 //   renderPointCloud(viewer,inputCloud,"inputCloud");
   
   auto filterCloud = pointProcessorI->FilterCloud(inputCloud, 0.2 , Eigen::Vector4f (-10, -5, -3, 1), Eigen::Vector4f ( 25, 6.5, 3, 1));
-  renderPointCloud(viewer, filterCloud, "filterCloud");
+  std::pair<pcl::PointCloud<pcl::PointXYZI>::Ptr, pcl::PointCloud<pcl::PointXYZI>::Ptr> segmentCloud = pointProcessorI->SegmentPlane(filterCloud, 100, 0.2);
+//   std::vector<pcl::PointCloud<pcl::PointXYZI>::Ptr> cloudClusters = pointProcessorI->Clustering(segmentCloud.second, 1.0, 3, 40);
+
+    // int clusterId = 0;
+    // std::vector<Color> colors = {Color(1,0,0), Color(0,1,0), Color(0,0,1)};
+
+    // for(auto cluster : cloudClusters)
+    // {
+    //     std::cout << "cluster size ";
+    //     pointProcessorI->numPoints(cluster);
+    //     renderPointCloud(viewer,cluster,"obstCloud"+std::to_string(clusterId),colors[clusterId]);
+
+    //     Box box = pointProcessorI->BoundingBox(cluster);
+    //     renderBox(viewer, box, clusterId);
+    //     ++clusterId;
+    // }
+
+  renderPointCloud(viewer, segmentCloud.first, "groundPlane");
+//   renderPointCloud(viewer, segmentCloud.second, "obstCloud");
 }
 
 //setAngle: SWITCH CAMERA ANGLE {XY, TopDown, Side, FPS}

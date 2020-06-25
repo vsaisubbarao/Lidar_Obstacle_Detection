@@ -1,5 +1,5 @@
 /* \author V Sai Subba Rao */
-// Implementing simple RANSAC line fitting
+// Implementing simple RANSAC plane fitting
 
 #include "../../render/render.h"
 #include <unordered_set>
