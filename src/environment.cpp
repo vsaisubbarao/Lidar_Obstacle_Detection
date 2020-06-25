@@ -106,8 +106,8 @@ void cityBlock(pcl::visualization::PCLVisualizer::Ptr& viewer)
     //     ++clusterId;
     // }
 
-  renderPointCloud(viewer, segmentCloud.first, "groundPlane");
-//   renderPointCloud(viewer, segmentCloud.second, "obstCloud");
+  renderPointCloud(viewer, segmentCloud.first, "groundPlane", Color(0,1,0));
+  renderPointCloud(viewer, segmentCloud.second, "obstCloud", Color(1,0,0));
 }
 
 //setAngle: SWITCH CAMERA ANGLE {XY, TopDown, Side, FPS}
