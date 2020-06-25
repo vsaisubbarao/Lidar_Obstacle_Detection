@@ -7,7 +7,7 @@
 // Structure to represent node of kd tree
 struct Node
 {
-	std::vector<float> point;
+	std::vector<float> point; 
 	int id;
 	Node* left;
 	Node* right;
@@ -34,8 +34,8 @@ struct KdTree
 
 		else  
 		{
-			uint i = depth % 2 ;
-			// X Split 
+			uint i = depth % point.size() ;
+			// Split based on depth 
 			if(point[i] < (*node)->point[i])
 				insertHelper(&((*node)->left), point, id, depth+1);
 			else 
@@ -52,15 +52,22 @@ struct KdTree
 	{
 		if (node != NULL)
 		{
+			bool basicCheck = false;
+			for (int i=0; i<target.size(); i++){
+				basicCheck = (fabs(node->point[i] - target[i]) < distanceTol) ? true : false; 
+			}
 
-			if (fabs(node->point[0] - target[0]) < distanceTol && fabs(node->point[1] - target[1]) < distanceTol)
+			if (basicCheck)
 			{
-				float dist = sqrt(pow(node->point[0] - target[0], 2) + pow(node->point[1] - target[1], 2));
+				float dist = 0; 
+				for (int i=0; i < target.size(); i++){
+					dist += sqrt(pow(node->point[i] - target[i], 2));
+				}
 				if (dist < distanceTol)
 					ids.push_back(node->id);
 			}
 
-			uint i = depth % 2;		
+			uint i = depth % target.size();		
 			
 			if (target[i] - distanceTol < node->point[i])
 				searchHelper(node->left, ids, depth+1, target, distanceTol);
