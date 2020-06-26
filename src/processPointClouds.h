@@ -19,6 +19,7 @@
 #include <ctime>
 #include <chrono>
 #include "render/box.h"
+#include "quiz/cluster/kdtree.h"
 
 template<typename PointT>
 class ProcessPointClouds {
@@ -46,6 +47,10 @@ public:
     typename pcl::PointCloud<PointT>::Ptr loadPcd(std::string file);
 
     std::vector<boost::filesystem::path> streamPcd(std::string dataPath);
+
+    std::vector<std::vector<int>> euclideanCluster(const std::vector<std::vector<float>>& points, KdTree* tree, float distanceTol);
+
+    void proximity(std::vector<std::vector<float>>points, int i, std::vector<bool> &processed, std::vector<int> &cluster, KdTree* &tree, float distanceTol);
   
 };
 #endif /* PROCESSPOINTCLOUDS_H_ */
